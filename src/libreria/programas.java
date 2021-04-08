@@ -12,7 +12,7 @@ public class programas {
     
    private void llenado(){
      llenadocompleto = 0;
-       if(kilos<=12){
+       if(getKilos()<=12){
            llenadocompleto = 1;
            System.out.println("Llenado.....");
            System.out.println("Llenado Completo");
@@ -68,8 +68,35 @@ public class programas {
    private void secado(){
        lavado();
        if(lavadocompleto==1){
-          System.out.println("SECANDO.....");
-          secadocompleto = 1;
+          switch(tipoderopa)
+            {
+             case 1:
+                System.out.println("SECANDO SUAVE.....");
+                secadocompleto = 1;
+                break;
+             case 2:
+                System.out.println("SECANDO FUERTE.....");
+                secadocompleto = 1;
+               break;
+               
+               case 3:
+               System.out.println("SECADO ECONOMICO COLGAR AL SOL");
+               secadocompleto = 1;
+               break;
+               
+               case 4:
+               System.out.println("SECANDO MUY SUAVE");
+                secadocompleto = 1;
+               break;
+               
+               default:
+               System.out.println("No existe el programa seleccionado");
+               break;   
+          
+            }
+           
+           
+           
        }else {
     System.out.println("NO ES POSIBLE INICIAR EL SECADO");
     
@@ -83,10 +110,29 @@ public class programas {
        if(secadocompleto == 1){
        System.out.println("TU ROPA ESTA LISTA ");
        }      
-    
-   
+       
    }
    
+      public int gettipodetopa(){
+       return tipoderopa;
+   }
+   public void settipoderopa(int tipoderopa2){
+       this.tipoderopa = tipoderopa2;
+   }
+
+    /**
+     * @return the kilos
+     */
+    public int getKilos() {
+        return kilos;
+    }
+
+    /**
+     * @param kilos the kilos to set
+     */
+    public void setKilos(int kilos) {
+        this.kilos = kilos;
+    }
    
    
 

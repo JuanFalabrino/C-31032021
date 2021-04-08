@@ -22,8 +22,25 @@ public class Main {
         System.out.print("Indique la cantidad de prendas(En enteros):");
         int peso = programa.nextInt();
         
-        programas mensajero = new programas(prog,peso);
-        mensajero.display();
+       programas mensajero = new programas(prog,peso);
+       
+       if (prog == 4) {
+       mensajero.settipoderopa(1);
+       System.out.print("Indico el programa: " + prog +  " Soy PAPA");
+       System.out.println("por configuración debo ejecutar el programa : " + mensajero.gettipodetopa() );
+       }
+       
+       if (peso >=12 ){
+        if (peso <=20){
+         mensajero.setKilos(12);
+         System.out.print("Indico el peso: " + peso );
+         System.out.println("por configuración debo ejecutar por el peso  : " + mensajero.getKilos() );
+         
+        }    
+      }
+       
+       
+       mensajero.display();
     }
     
 }
